@@ -26,8 +26,7 @@ Java_com_harsukh_fractaldisplay_SerpenskiCallbacks_loadFractal(JNIEnv *env, jobj
             ++l;
         }
     }
-    fractalRender = createRenderer(pos);
-
+    fractalRender = createRenderer();
     fractalRender->render(pos);
     return 0;
 }

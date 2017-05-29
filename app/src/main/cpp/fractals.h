@@ -4,7 +4,7 @@
 #include <GLES2/gl2.h>
 #include "EGL/egl.h"
 
-#define MAX_POINTS 2000 //modify this to render more points
+#define MAX_POINTS 1000 //modify this to render more points
 #define POS_SIZE 2
 typedef struct vertex_points {
     GLfloat pos[POS_SIZE];
@@ -23,8 +23,11 @@ int half_way(GLfloat point[], GLfloat a[], GLfloat new_point[]);
 class FractalRender {
 public:
     FractalRender();
+
     virtual ~FractalRender();
-    bool init(GLfloat *points_to_draw);
+
+    bool init();
+
     void render(GLfloat pos[]);
 
 protected:
@@ -32,11 +35,12 @@ protected:
 
 private:
     GLuint createProgram(const char *vertexSrc, const char *fragmentSrc);
+
     GLuint createShader(GLenum shaderType, const char *src);
+
     const EGLContext mEglContext;
     GLuint mProgram;
-    GLuint mVB;
     GLuint mPosAttrib;
 };
 
-extern FractalRender *createRenderer(GLfloat *points);
+extern FractalRender *createRenderer();
