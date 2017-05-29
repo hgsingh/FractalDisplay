@@ -4,16 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context="com.harsukh.fractaldisplay.MainActivity">
 
     <FrameLayout
         android:id="@+id/jni_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"/>
 
     <SeekBar
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_toEndOf="@+id/jni_container" />
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_alignBottom="@+id/jni_container"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
