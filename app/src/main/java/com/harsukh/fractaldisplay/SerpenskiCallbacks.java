@@ -6,4 +6,6 @@ package com.harsukh.fractaldisplay;
 
 public class SerpenskiCallbacks {
     public native int loadFractal();
+
+    public native int loadFractalFromSeek(int progress);
 }

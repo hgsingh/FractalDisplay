@@ -13,11 +13,13 @@ import javax.microedition.khronos.opengles.GL10;
 
 public class CustomJNIView extends GLSurfaceView {
     private static final int GL_VERSION = 2;
+    private SerpenskiCallbacks serpenskiCallbacks;
 
     public CustomJNIView(Context context) {
         super(context);
         setEGLContextClientVersion(GL_VERSION);
-        setRenderer(new CustomRenderer(new SerpenskiCallbacks()));
+        this.serpenskiCallbacks = new SerpenskiCallbacks();
+        setRenderer(new CustomRenderer(serpenskiCallbacks));
     }
 
     private static final class CustomRenderer implements GLSurfaceView.Renderer {
@@ -42,4 +44,9 @@ public class CustomJNIView extends GLSurfaceView {
         public void onDrawFrame(GL10 gl) {
         }
     }
+
+    public int loadFromSeekbar(int progress) {
+        return serpenskiCallbacks.loadFractalFromSeek(progress);
+    }
+
 }
