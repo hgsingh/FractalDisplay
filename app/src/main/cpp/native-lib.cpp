@@ -39,10 +39,6 @@ JNIEXPORT jint JNICALL
 Java_com_harsukh_fractaldisplay_SerpenskiCallbacks_loadFractalFromSeek(JNIEnv *env,
                                                                        jobject instance,
                                                                        jint progress) {
-    if (fractalRender) {
-        delete fractalRender;
-        fractalRender = NULL;
-    }
     int addition_of_points = progress + MAX_POINTS;
     vertex points_to_draw[progress];
     srand(time(NULL));
@@ -55,7 +51,6 @@ Java_com_harsukh_fractaldisplay_SerpenskiCallbacks_loadFractalFromSeek(JNIEnv *e
             ++l;
         }
     }
-    fractalRender = createRenderer();
     fractalRender->render(pos);
     return 0;
 

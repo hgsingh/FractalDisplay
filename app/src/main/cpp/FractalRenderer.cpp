@@ -104,6 +104,6 @@ GLuint FractalRender::createProgram(const char *vtxSrc, const char *fragSrc) {
 
 void FractalRender::render(GLfloat pos[]) {
     glClearColor(0.0, 0.0, 0.0, 0.0);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     draw(pos);
 }
