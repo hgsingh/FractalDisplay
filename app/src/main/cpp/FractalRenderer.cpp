@@ -44,6 +44,7 @@ void FractalRender::draw(GLfloat pos[]) {
     glEnableVertexAttribArray(mPosAttrib);
     glEnable(GL_POINTS);
     glDrawArrays(GL_POINTS, 0, MAX_POINTS);
+    glFlush();
 }
 
 FractalRender *createRenderer() {

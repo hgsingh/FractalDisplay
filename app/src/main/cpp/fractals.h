@@ -4,7 +4,7 @@
 #include <GLES2/gl2.h>
 #include "EGL/egl.h"
 
-#define MAX_POINTS 1000 //modify this to render more points
+#define MAX_POINTS 1500 //modify this to render more points
 #define POS_SIZE 2
 typedef struct vertex_points {
     GLfloat pos[POS_SIZE];
